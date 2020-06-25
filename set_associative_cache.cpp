@@ -215,7 +215,7 @@ void N_way(int Associative,unsigned long Byte_select_length,int Cache_tag_length
     cout<<Associative<<"-N Way\n";
     cout<<"Cache_size: "<<Cache_size/K<<'K'<<endl;
     cout<<"Block_size: "<<Block_size<<'B'<<endl;
-    cout<<"Hit rate: "<<Hit_rate*100<<"% ("<<Hit<<"), Miss rate: "<<(1-Hit_rate)*100<<"% ("<<DS-Hit<<")\n";
+    cout<<"Hit rate: "<<fixed<<setw(7)<<setprecision(2)<<Hit_rate*100<<"% ("<<Hit<<"), Miss rate: "<<(1-Hit_rate)*100<<"% ("<<DS-Hit<<")\n";
     //***********print data*****************//
 
     //***********write txt*****************//
@@ -223,7 +223,7 @@ void N_way(int Associative,unsigned long Byte_select_length,int Cache_tag_length
     {
         fstream output;
         output.open("answer.txt",ios::app);
-        output<<(1-Hit_rate)*100<<' ';
+        output<<fixed<<setw(7)<<setprecision(2)<<(1-Hit_rate)*100<<' ';
         output.close();
     }
     //***********write txt*****************//
