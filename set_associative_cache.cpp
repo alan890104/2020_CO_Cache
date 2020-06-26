@@ -84,7 +84,7 @@ string hex_to_binary(const string &hexdec)
         }
         i++;
     }
-    for(int i=0;i<32;i++) s = "0"+s;
+    for(int i=s.size();i<32;i++) s = "0"+s;
     reverse(s.begin(),s.end());
     return s;
 }
